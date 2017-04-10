@@ -17,7 +17,7 @@ public class CurrencyPayClient {
 	};
 
 	private static final String BASE_URI = "http://iebs.uksouth.cloudapp.azure.com:8080";
-	private Client client = ClientBuilder.newClient().register(JacksonJaxbJsonProvider.class); // .register(JacksonObjectMapperProvider.class);
+	private Client client = ClientBuilder.newClient().register(JacksonJaxbJsonProvider.class);
 
 	public Collection<PaymentInstruction> getPaymentActivity() {
 		Collection<PaymentInstruction> payments = client.target(BASE_URI).path("v1/payments/list")
